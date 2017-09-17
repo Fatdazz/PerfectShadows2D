@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Light.h"
 
 class ofApp : public ofBaseApp{
 
@@ -20,13 +21,14 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+        void renderObjects();
 		
     
     int lightSize;
-    ofFbo occludersFBO;
-    ofTexture occluders;
-    ofImage cat4, light;
-    ofShader shadowMap;
+    ofFbo occluders;
+    ofImage cat4;
+    ofTexture light;
+    LightRender lightRender;
     
 
 };
