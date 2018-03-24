@@ -1,10 +1,4 @@
-//
-//  LightRender.h
-//  Box2dLight
-//
-//  Created by Todd Vanderlin on 11/13/13.
-//
-//
+
 
 #pragma once
 #include "ofMain.h"
@@ -177,7 +171,7 @@ public:
             
             lightShader.setUniform2f("lightLocation", lights[i].pos.x, lights[i].pos.y);
             lightShader.setUniform3f("lightColor", lights[i].color.r, lights[i].color.g, lights[i].color.b);
-            lightShader.setUniform1f("u_radius", 10.0);
+            lightShader.setUniform1f("u_radius", 20.0);
             ofSetColor(255, 0, 255, 100);
             
             glBegin(GL_QUADS); {
@@ -192,7 +186,6 @@ public:
         glDisable(GL_BLEND);
         lightShader.end();
         lightFBO.end();
-        
         
         
     }

@@ -47,7 +47,7 @@ void main() {
     
     //we multiply the blur amount by our distance from center
     //this leads to more blurriness as the shadow "fades away"
-    float blur = (1.0/resolution.x) * smoothstep(1.0, 0.0, r);
+    float blur = (1./resolution.x) * smoothstep(1.0, 0.0, r);
     
     //now we use a simple gaussian blur
     float sum = 0.0;
@@ -67,7 +67,7 @@ void main() {
 
     float distance = length(lightLocation - gl_FragCoord.xy);
     
-    float intensity = (u_radius / distance) * sum;
+    float intensity = (20.0 / distance) * sum;
     vec4 frag = vec4(lightColor, 1.0) * vec4(intensity, intensity, intensity, 1.0);
     gl_FragColor = frag;
 }
